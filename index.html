@@ -37,6 +37,17 @@ font-size: 35px;
     left: 50%;
     transform: translate(-50%,-3%);
 }
+.container img {
+  min-width: 100%; 
+    min-height: 100%;
+    position: absolute;
+    z-index: 0;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-3%);
+}
 .overlay {
     position:relative;
     /*top: 50%;
@@ -55,6 +66,21 @@ font-size: 35px;
 	font-family: OCR A;
 	font-size: 35px;
 }
+.overlay a {
+  position:absolute;
+  top: 100%;
+  left: 99%;
+  text-align: left;
+  text-decoration: none;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color:white;
+  font-family: OCR A;
+  font-size: 13px;
+}
+#unmute {
+  display: none;
+}
 </style>
 <script>
 function startTime() {
@@ -71,6 +97,7 @@ if(h == 0){
 document.getElementById('txt').innerHTML =
 h + ":" + m + " AM";
 } else if(h >= 12){
+h = h - 12
 document.getElementById('txt').innerHTML =
 h + ":" + m + " PM";
 }
@@ -81,13 +108,38 @@ if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
 return i;
 }
 </script>
+<script>
+function mute(){
+  document.getElementById('background_audio').muted = true;
+  document.getElementById('mute').style.display = "none";
+  document.getElementById('unmute').style.display = "block";
+  var t = setTimeout(startTime, 500);
+}
+</script>
+<script>
+  function unmute(){
+  document.getElementById('background_audio').muted = false;
+  document.getElementById('unmute').style.display = 'none';
+  document.getElementById('mute').style.display = 'block';
+  var t = setTimeout(startTime, 500);
+}
+</script>
 </head>
 <body onload="startTime()">
 <div class="container">
-	<video autoplay loop muted style="z-index:0;">
+  <audio id="background_audio" autoplay="autoplay" loop>
+  <source src="audio.ogg" type="audio/ogg" muted>
+  Your browser does not support the audio element.
+</audio>
+<div class="overlay">
+<a id="mute" href="#" onclick="mute()">mute</a>
+<a id="unmute" href="#" onclick="unmute()">unmute</a>
+</div>
+	<!--<video autoplay loop muted style="z-index:0;">
   		<source src="testing.webm" type="video/webm">
   		<p>Your browser doesn't support HTML5 video. Here is instead.</p>
-	</video>
+	</video>-->
+  <img src="25fps.gif">
 	<div class="overlay">
 		<p id="txt">hello</p>
 	</div>
