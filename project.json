@@ -1,0 +1,23 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "''I finally found my place in life. A place where I am as close as possible, yet eternally distant.''\n\n1080P 60FPS\n\nSong:\nNieR Automata OST - The Sound of the End (Quiet & Instrumental)\n\nObs: Notice that the song was captured from the game itself, it's totally fine if you don't like it, you can turn it off on the menu.\n\nI fixed some errors like, looping time, reflection, particles. Hope you like.\n:D\n\nThanks.",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.png",
+	"tags" : [ "Game" ],
+	"title" : "Hell Zone",
+	"type" : "web",
+	"visibility" : "public"
+}
