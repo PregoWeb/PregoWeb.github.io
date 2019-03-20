@@ -2,69 +2,28 @@
 <html>
 <head>
 <style>
-/*body {
-background-image: url("Final-Work-Lunar-Tears-ffff.gif");
-background-position: center;
-background-size: cover;
-width: 100vw;
-height: 96vh;
-color: white;
-font-family: OCR A;
-font-size: 35px;
-}*/
-.center { 
-  height: 518.4px;
-  position: relative;
-  z-index:1;
+body {
+  background: url("50fps1.gif");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.center p {
-  margin: 0;
-  position: relative;
-  /*top: 50%;
-  left: 72%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);*/
-}
-.container { position:relative; }
-.container video {
-	min-width: 100%; 
-  	min-height: 100%;
-    position: absolute;
-    z-index: 0;
-    width: auto;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-3%);
-}
+.container { position:relative;
+width: 100%;
+height: 100%; }
 .container img {
-  min-width: 100%; 
-    min-height: 100%;
     position: absolute;
     z-index: 0;
-    width: auto;
+    width: 100%;
     height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-3%);
-}
-.overlay {
-    position:relative;
-    /*top: 50%;
-  	left: 72%;
-  	-ms-transform: translate(-50%, -50%);
-  	transform: translate(-50%, -50%);*/
-    z-index:1;
 }
 .overlay p {
 	position:absolute;
-	top: 211px;
-  	left: 75%;
-  	-ms-transform: translate(-50%, -50%);
-  	transform: translate(-50%, -50%);
+  left: 70%;
 	color:white;
 	font-family: OCR A;
 	font-size: 35px;
+  transform: translate(0%, 600%);
 }
 .overlay a {
   position:absolute;
@@ -104,7 +63,7 @@ h + ":" + m + " PM";
 var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
-if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
+if (i < 10) {i = "0" + i};
 return i;
 }
 </script>
@@ -128,25 +87,16 @@ function mute(){
 <body onload="startTime()">
 <div class="container">
   <audio id="background_audio" autoplay="autoplay" loop>
-  <source src="audio.ogg" type="audio/ogg" muted>
-  Your browser does not support the audio element.
-</audio>
-<div class="overlay">
-<a id="mute" href="#" onclick="mute()">mute</a>
-<a id="unmute" href="#" onclick="unmute()">unmute</a>
-</div>
-	<!--<video autoplay loop muted style="z-index:0;">
-  		<source src="testing.webm" type="video/webm">
-  		<p>Your browser doesn't support HTML5 video. Here is instead.</p>
-	</video>-->
-  <img src="25fps.gif">
+    <source src="audio.ogg" type="audio/ogg" muted>
+    Your browser does not support the audio element.
+  </audio>
+  <div class="overlay">
+    <a id="mute" href="#" onclick="mute()">mute</a>
+    <a id="unmute" href="#" onclick="unmute()">unmute</a>
+  </div>
 	<div class="overlay">
 		<p id="txt">hello</p>
 	</div>
 </div>
-<!--<div class="center">
-<p id="txt">hello</p>
-</div>-->
-
 </body>
 </html>
